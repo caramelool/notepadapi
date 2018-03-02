@@ -4,6 +4,10 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
-data class Nota(@Id var id: String? = null,
-                var titulo: String? = null,
-                var conteudo: String? = null)
+class Nota {
+    @Id var id: String? = null
+    var titulo: String? = null
+        get() = field ?: "(sem titulo)"
+    var conteudo: String? = null
+        get() = field ?: ""
+}

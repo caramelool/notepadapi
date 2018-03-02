@@ -11,7 +11,7 @@ class NotaService {
     @Autowired
     lateinit var repository: NotaRepository
 
-    fun salvar(nota: Nota) : Nota {
+    fun salvar(nota: Nota): Nota {
         return repository.save(nota)
     }
 
