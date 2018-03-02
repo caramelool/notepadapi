@@ -17,9 +17,9 @@ class NotaController {
         return service.buscarTodas()
     }
 
-    @GetMapping("/titulo/{titulo}")
-    fun buscar(@PathVariable("titulo") titulo: String): Nota? {
-        return service.buscar(titulo)
+    @GetMapping("/{id}")
+    fun buscar(@PathVariable("id") id: String): Nota? {
+        return service.buscar(id)
     }
 
     @PostMapping

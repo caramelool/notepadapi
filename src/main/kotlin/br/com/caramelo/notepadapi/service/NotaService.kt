@@ -12,20 +12,14 @@ class NotaService {
     lateinit var repository: NotaRepository
 
     fun salvar(nota: Nota) {
-        nota.titulo?.let {
-            val aux = buscar(it)
-            aux?.let {
-                nota.id = aux.titulo
-            }
-            repository.save(nota)
-        }
+        repository.save(nota)
     }
 
     fun buscarTodas(): List<Nota> {
         return repository.findAll()
     }
 
-    fun buscar(title: String): Nota? {
-        return repository.findByTitulo(title)
+    fun buscar(id: String): Nota? {
+        return repository.findById(id)
     }
 }

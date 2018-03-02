@@ -11,5 +11,5 @@ interface NotaRepository : MongoRepository<Nota, String> {
     @Query("{}")
     fun all(): Stream<Nota>
 
-    fun findByTitulo(titulo: String): Nota?
+    fun findById(id: String): Nota?
 }
