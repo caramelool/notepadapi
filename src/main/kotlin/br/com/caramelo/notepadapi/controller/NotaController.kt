@@ -23,7 +23,7 @@ class NotaController {
     }
 
     @PostMapping
-    fun salvar(@RequestBody nota: Nota) {
-        service.salvar(nota)
+    fun salvar(@RequestBody nota: Nota): Nota {
+        return service.salvar(nota)
     }
 }
