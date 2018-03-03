@@ -28,12 +28,9 @@ class NoteController {
         return service.save(note)
     }
 
-    @DeleteMapping("/{id}")
-    fun delete(@PathVariable("id") id: String): Note? {
-        service.find(id)?.let {
-            service.delete(it)
-            return it
-        }
-        throw Exception()
+    @DeleteMapping
+    fun delete(@RequestBody note: Note): Note? {
+        service.delete(note)
+        return note
     }
 }
